@@ -1,0 +1,6 @@
+void hanoi(int n, char a, char b, char c){//z pierwszego bieżemu, drugi pomocniczy, trzeci docelowy kołek
+  if(n>0){
+    hanoi(n-1, a, c, b);
+    cout << a << "->" << c << endl;
+    hanoi(n-1, b, a, c);
+  }
