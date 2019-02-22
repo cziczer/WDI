@@ -1,0 +1,6 @@
+int king(int t[8][8], int k, int w){
+  if(w == 7) return t[w][k];
+  int x = king(t, k, w+1);
+  if(k > 0) x = min(x, king(t, k-1, w+1);
+  if(k < 7) x = min(x, king(t, k+1, w+1);
+}
