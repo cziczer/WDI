@@ -1,0 +1,38 @@
+struct node{
+  int w;
+  node *next;
+}
+// NULL strzałka to z kartkówki pałka hihi
+// dołączenie wskaźnika na koniec
+
+void insertlast(node *&first, int n){
+  node *p = new node;
+  p -> w = n;
+  p -> next = NULL;
+  if(first = NULL) first = p;
+  else if r!= NULL
+  node *r = first;
+  while(r -> next != NULL) r = r -> nest;
+  r -> nest = p;
+ }
+// usunięcie pierwszego wskaźnika
+
+node *tmp=first
+first = first -> next;
+delte tmp;
+
+//usuwanie ostatniego elemetnu
+
+r = first;
+p = NULL;
+while(r != NULL){
+  p = r;
+  r = r -> next;
+}
+
+// wartownik
+
+node *wart = new node;
+wart -> next = f -> next;
+f -> next = wart;
+ 
