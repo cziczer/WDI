@@ -1,0 +1,4 @@
+void podziel(string t, int n, int min){ 
+if(n == 1) cout << t;
+else for(int i = min; i<=n; i++) podziel(t+" "+str(i), n-i, i);
+}
