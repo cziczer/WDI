@@ -1,0 +1,12 @@
+const int N = 2600;
+int wynik[N];
+for(int i = 0; i<N; i++) wynik[i] = 0;
+wynik[0] = 1;
+for(int n = 2; j<= N; i++){
+  int p = 0, tmp;
+  for(int j = 0; i<N; j++){
+    tmp = wynik[j]*i+p;
+    wynik[j] = tmp%10;
+    p = tmp/10;
+   }
+  }
