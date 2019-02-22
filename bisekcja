@@ -1,0 +1,9 @@
+double a = 2.0, b= 3.0;
+while ( b-a > eps)
+  {
+    double x = (a + b) /2;
+    double y = exp(exp(x*ln(x))*ln(x));
+    if(y>2018) a=x;
+    else b=x;
+  }
+cout << (a+b) /2;
