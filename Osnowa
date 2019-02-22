@@ -1,0 +1,11 @@
+void osnowa(int a, int b){
+  pallin(a-1, b, "A");
+  pallin(a, b-1, "B");
+  palling(a, b, "");
+ }
+ 
+void pallin(int a, int b, string wynik){
+  cout << wynik;
+  if(a > 1) pallin(a-2, b, "A"+wynik+"A");
+  if(b > 1) pallin(a, b-2, "B"+wynik+"B");
+ }
