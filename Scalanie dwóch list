@@ -1,0 +1,30 @@
+node *merge(node *p1, node *p2){
+  node *first, *last;
+  if(p1 == NULL) return p2;
+  if(p2 == NULL) return p1;
+  if(p1 -> w < p2 -> 2){first = p1; p1 = p1 -> next;}
+  else { first = p2; p2 = p2 -> next;}
+  last = first;
+  while(p1 != NULL && p2 != NULL){
+    if(p1 -> w < p2 -> w) {last -> next = p1; p1 = p1 -> next;}
+    else {last -> next = p2; p2 = p2 -> next; }
+    last = last -> next;
+   }
+ if(p1 == NULL) last -> next = p2;
+ else last -> next = p1;
+ return first;
+ 
+ // rekurencyjnie
+ 
+ node *merge(node *p1, node *p2){
+  if(p1 == NULL) return p2;
+  if(p2 == NULL) return p1;
+  if(p1 -> w > p2 -> w){
+    p2 -> next = merge(p1, p2 -> next);
+    return p2;
+   }
+   else{
+   p1 -> next = merge(p1 -> next, p2);
+   return p1;
+  }
+ }
