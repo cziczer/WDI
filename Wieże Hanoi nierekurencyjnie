@@ -1,0 +1,21 @@
+// najmniejszy o 1 w prawo
+// potem jedyny możliwy nie ruszając najmniejszego
+
+void Hanoi(int n){
+  stos A[3];
+  init(A[0]); init(A[1]); init(A[2]);
+  for(int i = n; i>0; i--) push(A, i);
+  int i = 1 - 2(n%2);
+  int x = 0; // nr wiezy z najmniejszym krążkiem
+  for(int i=0; i<1<<N;i++){ // przesunięcie bitów
+  x = (x+1)%3;
+  pop(A[x]);
+  push(A[(x+1)%3, 1];
+  if(top(A[x]) > top (A[(x+2*x)%3])
+  push(A[x], pop(A[(x+2*x)%3]);
+  push(A[x], pop(A[(x+2*x)%3]);
+  else
+    push(A[(x+2*i)%3], pop(A[x]));
+    x=(x+i)%3;
+  }
+  
