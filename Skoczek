@@ -1,0 +1,7 @@
+void skok(int t[N][N], int r, int c, int n, bool stop){// r= row c = column
+  t[r][c] = n;
+  if(n == N*N){wypisz(t); stop = true}
+  else {
+    for(int i = 0, i < 8 and !stop, i++)
+      if(mozliwe(t, r, c, i, &r2, &c2)) skok(t, r2, c2, n+1); // czy możliwe skoki
+    t[r][c] = 0; // zerowanie jak się nie da 
