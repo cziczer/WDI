@@ -1,0 +1,12 @@
+void hetman(int wi[], bool zw[], bool lprz[], bool pprz[], int k){ //wiersz, zajęty wiersz, lewa przekątna, prawa przekątna
+  if(k == 8){
+    wypisz(wi);
+    return;
+    }
+ for(int w = 0; w<8; w++){
+  if(!zw[w] && !lprz[w-k+7] && !pprz[w+k]){
+    zw[w] = lprz[w-k+7] = prpz[w+k] = true;
+    wi[k] = w;
+    hetman(wi, zw, lprz, pprz, k+1);
+    zw[w] = lprz[w-k+7] = prpz[w+k] = false // cofamy ruch jak sie nie da
+   }
