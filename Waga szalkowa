@@ -1,0 +1,6 @@
+bool waga(int t[n], int cel, int i){
+  if ( cel < 0) return false;
+  if ( cel == 0) return true;
+  if ( i == N) return false;
+  return waga(t, cel-t[i], i+1) or waga(t, cel, i+1)
+ }
