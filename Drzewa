@@ -1,0 +1,29 @@
+//wypisywanie drzewa
+
+void wypisz(node *proot){
+  if(proot == NULL) return;
+  wypisz(proot -> left);
+  wypisz(proot -> right);
+  cout << proot -> w);
+}
+
+void rozmiar(node *proot){
+  if(proot == NULL) return 0;
+  return rozmiar (proot -> left) + rozmiar(proot -> right) + 1;
+  
+int wysokosc(node *proot){
+  if(proot == NULL) reutn 0;
+  return max(wysokosc(proot -> left), wysokosc(proot -> right)) +1;
+ }
+ 
+int lisc(node *proot){
+  if(proot == NULL) return 0;
+  if (proot -> right == NULL && proot -> left == NULL) return 1;
+  return lisc(proot -> left) + lisc (proot -> right);
+}
+
+int wezlow(node *proot, int n){
+  if(proot == NULL) return 0;
+  if(n == 0) return 1;
+  return wezlow(proot -> right, n-1) + wezlow(proot -> left, n-1);
+}
