@@ -1,0 +1,13 @@
+bool podział(int tab[N]){
+  int tab2[N]; 
+  int s = 0;
+  for(int i=0; i<N; i++){
+    s+=tab2[i]=waga(tab[i]);
+    if(s%2 != 0) return false'
+    return rpodzial(tab2, 0, 0, 0);
+  }
+  
+bool rpodzial(int t[N], int sum1, int sum2, int i){
+  if(i == N) return (sum1 == sum2);
+  return rpodzial(t, sum1+t[i], sum2, i+1) or rpodzial(t, sum1, sum2+t[i], i+1);
+ }
