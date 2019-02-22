@@ -1,0 +1,18 @@
+int n;
+cin >> n;
+int len = 0, res = 0;
+int CopyN = n, max_mask = 1;
+while(cn > 0){
+  len++;
+  cn/=10;
+  max_mask*=2;
+ }
+for(int mask = 1; mask < max_maskl mask++){
+  CopyN = n;
+  int c_mask = mask;
+  while(CopyN > 0){
+    if(mask%=2)
+    res=res*10+cn%10;
+    mask/=2;
+    cn/=10;
+   }
