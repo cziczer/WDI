@@ -1,0 +1,17 @@
+int part(int arr[], int l, int r){
+	int x = arr[r];
+	int i, j, tmp;
+	i = l-1;
+	for(j = l; j<=r; j++){
+		if(x > arr[j]){i++; tmp = arr[j]; arr[j] = arr[i]; arr[i] = tmp;}
+		else {tmp = arr[r]; arr[r] = arr[i+1]; arr[i+1] = tmp;}
+	}
+	return i+1;
+}
+void QuickSort(int arr[], int l, int r){
+	if(l < r){
+		int q = part(arr, l, r);
+		QuickSort(arr, l, q-1);
+		QuickSort(arr, q+1, r);
+	}
+}
