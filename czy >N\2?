@@ -15,6 +15,6 @@ int findMajority(int *tab, int n) {
     }
     if (counter > n / 2)
         return majority;
-    else
+    else 
         return -1;
 }
