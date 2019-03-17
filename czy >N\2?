@@ -1,0 +1,20 @@
+int findMajority(int *tab, int n) {
+    int counter = 0, majority;
+    for (int i = 0; i < n; i++) {
+        if (counter == 0)
+            majority = i;
+        if (tab[i] == tab[majority])
+            counter++;
+        else
+            counter--;
+    }
+    counter = 0;
+    for (int i = 0; i < n; i++) {
+        if (tab[i] == tab[majority])
+            counter++;
+    }
+    if (counter > n / 2)
+        return majority;
+    else
+        return -1;
+}
