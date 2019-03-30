@@ -1,7 +1,7 @@
-int(n == 1) return false; // przekazujemy n
-if(n == 2) or (n ==3) return true;
-if(n%2 == 0) or (n%3 == 0) return false;
-int b = 2, p = sqrt(n);
+if(n == 1) return false;
+if(n == 2 || n ==3) return true;
+if(n%2 == 0 || n%3 == 0) return false;
+int b = 5, p = sqrt(n);
 while(b <= p){
   if(n%b == 0) return false;
   b+=2;
