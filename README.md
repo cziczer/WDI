@@ -1,1 +1,1 @@
-# WDI
+# Introductio to Computer Science
