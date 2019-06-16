@@ -1,0 +1,64 @@
+int main() {
+	srand(time(NULL));
+	int N = 14;
+	int * A = new int[N];
+	for(int i = 0; i < N; ++i) {
+		A[i] = rand() % (2 * N);
+		cout << A[i] << " ";
+	}
+	cout << endl;	
+	cout << select(A, 0, N - 1, 4) << endl;
+ 
+	return 0;
+}
+ 
+int select(int * A, int l, int r, int k) {
+	if(l == r)
+		return A[l];
+	int q = quick_part(A, l, r);	// index podzialu
+	int tmp = q - l + 1;	// liczba elementow w lewej podtablicy
+ 
+	return (k <= tmp) ? select(A, l, q, k) : select(A, q + 1, r, k - tmp);
+}
+ 
+int quick_part(int * A, int l, int r) {	
+	int pivot = mediana(A, l, r);
+	int i = l;
+	int j = r;
+ 
+	do {
+		while (A[j] > pivot) --j;
+		while (A[i] < pivot) ++i;		
+		if (i <= j) swap(A[i++], A[j--]);
+	} while(i <= j);
+ 
+	return i - 1;
+}
+ 
+int mediana(int * A, int l, int r) {
+	if(l == r)
+		return A[l];
+	int size = (r - l) / 5 + 1;
+	int * wynik = new int[size];
+	int k = 0;
+	for(int i = l; i <= r; i += 5) {
+		sortuj(A, i, min(i + 5, r + 1));
+		wynik[k++] = A[i + (min(i + 4, r) - i) / 2];
+	}
+ 
+	int result = mediana(wynik, 0, size - 1);
+	delete [] wynik;
+	return result;
+}
+ 
+void sortuj(int * A, int l, int r) {
+	for(int i = l + 1; i < r; ++i) {
+		int j = i;
+		int key = A[j];
+		while (j > l && key < A[j - 1]) {
+			A[j] = A[j - 1];
+			--j;
+		}
+		A[j] = key;
+	}
+}
